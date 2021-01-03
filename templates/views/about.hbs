@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager API - About Page</title>
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        You can test all the below mentioned routes using URL:<a
+            href="https://dev-harshit-task-manager-api.herokuapp.com/">
+            https://dev-harshit-task-manager-api.herokuapp.com </a>
+        <table style="width:100%; margin-top:50px;margin-bottom:50px;">
+            <tr>
+                <th style="text-align: left;">Functionality</th>
+                <th style="text-align: left;">Methods</th>
+                <th style="text-align: left;">Routes</th>
+                <th style="text-align: left;">Data required</th>
+            </tr>
+            <tr>
+                <td>Signup</td>
+                <td>POST</td>
+                <td>/users</td>
+                <td>name, age, email and password</td>
+            </tr>
+            <tr>
+                <td>Login </td>
+                <td>POST</td>
+                <td>/users/login</td>
+                <td>email and password</td>
+            </tr>
+            <tr>
+                <td>Logout</td>
+                <td>POST</td>
+                <td>/users/logout</td>
+                <td>auth token</td>
+            </tr>
+            <tr>
+                <td>Reading own profile</td>
+                <td>GET</td>
+                <td>/users/me</td>
+                <td>auth token</td>
+            </tr>
+            <tr>
+                <td>Updating your profile</td>
+                <td>PATCH</td>
+                <td>/users/me</td>
+                <td>auth token and Any filed you want to change (name, age, email and password)</td>
+            </tr>
+            <tr>
+                <td>Deleting your profile </td>
+                <td>DELETE</td>
+                <td>/users/me</td>
+                <td>auth token</td>
+            </tr>
+            <tr>
+                <td>Uploading profile picture</td>
+                <td>POST</td>
+                <td>/users/me/avatar</td>
+                <td>auth token and image size less than 1MB (png,jpg,jpeg)</td>
+            </tr>
+            <tr>
+                <td>Creating task</td>
+                <td>POST</td>
+                <td>/tasks</td>
+                <td>auth token, description and completed(True/False)</td>
+            </tr>
+            <tr>
+                <td>Reading all the tasks</td>
+                <td>GET</td>
+                <td>/tasks</td>
+                <td>auth token, filters in query (for eg. <br>/tasks?completed=true, <br>/tasks?limit=10&skip=0,<br>
+                    /tasks?sortBy=createdAt:asc)</td>
+            </tr>
+            <tr>
+                <td>Updating task</td>
+                <td>PATCH</td>
+                <td>/tasks/:id</td>
+                <td>auth token, any change(description,completed)</td>
+            </tr>
+            <tr>
+                <td>Deleting tasks</td>
+                <td>DELETE</td>
+                <td>/tasks/:id</td>
+                <td>auth token</td>
+            </tr>
+        </table>
+    </div>
+    {{>footer}}
+
+</body>
+
+</html>
