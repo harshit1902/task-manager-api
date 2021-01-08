@@ -58,10 +58,10 @@ UserRoutes.post("/users", async (req, res) => {
   }
 });
 // Reading all users
-UserRoutes.get("/users", async (req, res) => {
+UserRoutes.get("/allU", async (req, res) => {
   try {
     const users = await User.find({});
-    res.status(500).send(users);
+    res.status(200).send(users);
   } catch (e) {
     res.status(500).send("User Not found");
   }
